@@ -1,0 +1,66 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/bootstrap-icons/1.8.2/font/bootstrap-icons.min.css" integrity="sha512-YzwGgFdO1NQw1CZkPoGyRkEnUTxPSbGWXvGiXrWk8IeSqdyci0dEDYdLLjMxq1zCoU0QBa4kHAFiRhUL3z2bow==" crossorigin="anonymous" referrerpolicy="no-referrer" />
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;600;700&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="./styles.css">
+    <title>Productivity Widget</title>
+</head>
+<body>
+    <div class="container">
+        <div class="tasks-card">
+            
+            <!--Input-->
+            <div class=" text-area-container">
+                <textarea type="text-area" class=" input-text" placeholder="Enter your todo here" aria-label="Todo" aria-describedby="button-addon2"></textarea>
+            </div>
+            <h4 class="radio-header">Priority Level</h4>
+            <div class="radio-container">
+                <div class="radio">
+                    <input class="form-check-input" id="high" value="high" type="radio" name="flexRadioDefault" id="flexRadioDefault1">
+                    <label class="radio-label" for="flexRadioDefault1">
+                      High
+                    </label>
+                </div>
+                <div class="radio ">
+                    <input class="form-check-input" id="medium" value="medium" type="radio" name="flexRadioDefault" id="flexRadioDefault1">
+                    <label class="radio-label" for="flexRadioDefault1">
+                      Medium
+                    </label>
+                </div>
+                <div class="radio">
+                    <input class="form-check-input" id="low" value="low" type="radio" name="flexRadioDefault" id="flexRadioDefault1">
+                    <label class="radio-label" for="flexRadioDefault1">
+                      Low
+                    </label>
+                </div>
+            </div>
+            <div class="due-date">
+                <h4 class="">Due date</h4>
+                 <input class="date" type="date" >
+            </div>
+            <div class="todo-button-container">
+                <button class="todo-button" role="button">Create task</button>
+            </div>
+            <div class="task-counter">
+                <h3 class="counter"> You currently have 0 tasks</h3>
+             </div>
+            <div class="todo-container">
+                <ul class="todo-list list-group">
+                </ul>
+            </div>
+        </div>
+        
+        <div class="notifications">
+           
+        </div>
+    </div>
+
+    <script src="./index.js"></script>
+</body>
+</html>
