@@ -6,6 +6,18 @@ const radioContainer = document.querySelector(".radio-container");
 const date = document.querySelector(".date");
 const notification = document.querySelector(".notifications");
 
+let lastScrollY = window.scrollY;
+
+window.addEventListener("scroll", () => {
+  if (lastScrollY < window.scrollY) {
+    todoBtn.classList.add("todo-button--hidden");
+  } else {
+    todoBtn.classList.remove("todo-button--hidden");
+  }
+
+  lastScrollY = window.scrollY;
+});
+
 function newTodo() {
   todoBtn.addEventListener("click", (e) => {
     e.preventDefault;
@@ -43,16 +55,20 @@ function newTodo() {
       }, 2000);
     }
 
-    //Clearing input after tod is added
+    //Clearing input after todo is added
     inputText.value = "";
 
     //Due date
     if (date.value) {
       const dueDate = document.createElement("div");
-      dueDate.innerHTML = `<i class="bi bi-calendar-week-fill icon-calender"></i>`;
       dueDate.classList.add("due-date-container");
-      dueDate.innerHTML = `<textArea disabled type="number" class="text-area due-date-text-area">  ${date.value} </textArea>`;
+      dueDate.innerHTML = `<span class="todo-calendar-span"><i class="bi bi-calendar-check-fill"></i><input disabled type="date" value="${date.value}" class=" due-date-text-area"></span>`;
       todoItem.append(dueDate);
+    }
+
+    //Due date toast message
+
+    if (!date.value) {
     }
     //Clear date selector after todo submittion
     date.value = "";
@@ -69,7 +85,7 @@ function newTodo() {
       dueDateTextArea.toggleAttribute("disabled");
     });
 
-    const todoTextArea = document.querySelector(".todo-text-area");
+    const todoTextArea = document.querySelector(".text-area");
 
     editButton.addEventListener("click", () => {
       todoTextArea.toggleAttribute("disabled");
@@ -80,6 +96,11 @@ function newTodo() {
     completeButton.innerHTML = '<i class="bi bi-check-circle"></i>';
     completeButton.classList.add("complete-button");
     todoItem.append(completeButton);
+
+    completeButton.addEventListener("click", () => {
+      todoItem.remove();
+      totalTasks.pop();
+    });
 
     //Add level of importance
 
@@ -134,10 +155,17 @@ newTodo();
 todoList.addEventListener("click", (e) => {
   const selected = e.target;
 
-  if (selected.classList[0] == "complete-button") {
+  if (selected.className == "complete-button") {
     const todo = selected.parentElement;
     selected.addEventListener("click", () => {
       todo.remove();
     });
   }
+});
+
+gsap.from(".todo", {
+  duration: 0.5,
+  opacity: 0,
+  ease: "power4",
+  delay: 1,
 });

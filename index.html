@@ -6,6 +6,7 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/bootstrap-icons/1.8.2/font/bootstrap-icons.min.css" integrity="sha512-YzwGgFdO1NQw1CZkPoGyRkEnUTxPSbGWXvGiXrWk8IeSqdyci0dEDYdLLjMxq1zCoU0QBa4kHAFiRhUL3z2bow==" crossorigin="anonymous" referrerpolicy="no-referrer" />
     <link rel="preconnect" href="https://fonts.googleapis.com">
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.10.4/gsap.min.js"></script>
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
 <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;600;700&display=swap" rel="stylesheet">
     <link rel="stylesheet" href="./styles.css">
@@ -22,21 +23,28 @@
             <h4 class="radio-header">Priority Level</h4>
             <div class="radio-container">
                 <div class="radio">
-                    <input class="form-check-input" id="high" value="high" type="radio" name="flexRadioDefault" id="flexRadioDefault1">
-                    <label class="radio-label" for="flexRadioDefault1">
-                      High
+                 
+                    <label class="radio-label" for="high">
+                        <input class="form-check-input" id="high" value="high" type="radio" name="flexRadioDefault">
+                        <div class="radio__radio--orange"></div>
+                        High
                     </label>
+                  
                 </div>
                 <div class="radio ">
-                    <input class="form-check-input" id="medium" value="medium" type="radio" name="flexRadioDefault" id="flexRadioDefault1">
-                    <label class="radio-label" for="flexRadioDefault1">
-                      Medium
+                 
+                    <label class="radio-label" for="medium">
+                        <input class="form-check-input" id="medium" value="medium" type="radio" name="flexRadioDefault" >
+                        <div class="radio__radio--yellow"></div>
+                        Medium
                     </label>
                 </div>
                 <div class="radio">
-                    <input class="form-check-input" id="low" value="low" type="radio" name="flexRadioDefault" id="flexRadioDefault1">
-                    <label class="radio-label" for="flexRadioDefault1">
-                      Low
+                    
+                    <label class="radio-label" for="low">
+                        <input class="form-check-input" id="low" value="low" type="radio" name="flexRadioDefault">
+                        <div class="radio__radio--green"></div>
+                        Low
                     </label>
                 </div>
             </div>
